@@ -22,17 +22,31 @@ a:hover {
   color: #535bf2;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url("https://images.pexels.com/photos/19145526/pexels-photo-19145526/free-photo-of-natura-cielo-nuvole-meteo.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+h2 {
+  text-align: center;
 }
 
 button {
@@ -45,6 +59,8 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-top: 1em;
+  margin-left: 2.5rem;
 }
 button:hover {
   border-color: #646cff;
@@ -52,6 +68,142 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.home-center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (min-width: 900px) {
+  .weather-main {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+.weather-current {
+  background: #222;
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  min-width: 320px;
+  text-align: center;
+  box-shadow: 0 2px 12px #0002;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.weather-current .temp {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.weather-current .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.weather-forecast {
+  background: #222;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  min-width: 400px;
+  box-shadow: 0 2px 12px #0002;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+.forecast-list {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.forecast-day {
+  min-width: 90px;
+  text-align: center;
+  background: #333;
+  border-radius: 12px;
+  padding: 0.7rem 0.5rem;
+}
+.forecast-day .icon {
+  font-size: 2.2rem;
+}
+.forecast-day .temp-max {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.forecast-day .temp-min {
+  font-size: 1rem;
+  color: #aaa;
+}
+.weather-title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.weather-bottom-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2.5rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  h2 {
+    text-align: center;
+  }
+  .weather-main {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .weather-current,
+  .weather-forecast {
+    min-width: unset;
+    width: 100%;
+    padding: 1.2rem 0.5rem;
+  }
+  .weather-bottom-bar {
+    padding-right: 0.5rem;
+    margin-top: 1.2rem;
+  }
+  .weather-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -65,4 +217,8 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.btn.btn-secondary.text-white {
+  color: #fff;
 }
